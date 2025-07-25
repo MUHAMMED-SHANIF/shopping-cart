@@ -6,6 +6,7 @@ const CartItemSchema = new mongoose.Schema({
 });
 
 const CartSchema = new mongoose.Schema({
+  user: { type: String, required: true, unique: true },
   items: [CartItemSchema],
   loyaltyLevel: { type: String, enum: ['Bronze', 'Silver', 'Gold'], default: 'Bronze' }
 });
